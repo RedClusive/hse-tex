@@ -1,39 +1,79 @@
-\usepackage[T2A]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english, russian]{babel}
+\usepackage{../../header-common}
+
+\usepackage[top=0.4in,bottom=0.8in,left=0.4in,right=0.4in,headheight=110pt]{geometry}
+
+\usepackage{indentfirst}            % Отступ первого параграфа
+\usepackage[T2A]{fontenc}           % кодировка
+\usepackage[utf8]{inputenc}         % кодировка исходного текста
+\usepackage[english,russian]{babel} % локализация и переносы
+
+%% Кастомизация списокв
+\usepackage[inline]{enumitem}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+
+%% Шрифты
+\usepackage{euscript} % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+\usepackage[bbgreekl]{mathbbol}
+
+%% Соси жопу, mathbbol, хочу mathbb от amsmath 😎
+\DeclareSymbolFontAlphabet{\mathbbold}{bbold}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+
+%% Табличика там где хочецца
+\usepackage{float}
+
+%% Графички функций
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{every axis/.style={scale only axis}}
+
+%% wrapfigure
+\usepackage{wrapfig}
+
+
+%% Эпиграф
+\usepackage{epigraph}
+
+\usepackage{fixltx2e}
+
 \usepackage{graphicx}
+\graphicspath{{img/}}
+
+\usepackage{blkarray}
+
+\usepackage{scalerel}
+
+%% фигуры
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
-\usepackage{subcaption}
-\usepackage{centernot}
-\usepackage{framed}
+
 \usepackage{titlesec}
-\usepackage{siunitx}
 
-\usepackage{caption}
-
-\usepackage[top=0.4in,bottom=0.8in,left=0.4in,right=0.4in,headheight=110pt]{geometry}
-\usepackage{amsmath, amsthm, amssymb, mathtools}
-\usepackage{indentfirst}
+%% Оглавление с ссылками и ссылки на разные вещи
 \usepackage[unicode=true, colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
 
+%% Черный квадрат в доказательствах
 \renewcommand\qedsymbol{$\blacksquare$}
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\CC}{\mathbb{C}}
-\newcommand{\os}{\bar{\bar{o}}}
-\newcommand{\eps}{\varepsilon}
+
+%% Красивые <= и >=
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
+
+%% Более привычные греческие буквы
 \renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\eps}{\varepsilon}
 \newcommand{\dd}{\mathop{}\!d}
 
-\usepackage[inline]{enumitem}
 \AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
 \newlist{options}{enumerate}{1}
 \newlist{options*}{enumerate*}{1}
@@ -76,6 +116,16 @@
 \end{array}\right)
 }
 
+%% Сокращения для обозначения множеств
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\EE}{\mathbb{E}}
+
+\newcommand{\os}{\bar{\bar{o}}}
 \newcommand{\ar}[2]{\xrightarrow[\text{#2}]{\text{#1}}}
 
 % subsubsubsection
@@ -134,9 +184,6 @@
 
 \everymath{\displaystyle} % math everywhere
 
-\usepackage{euscript} % Шрифт Евклид
-\usepackage{mathrsfs} % Красивый матшрифт
-\usepackage{bbm}
 
 % Большие интегралы
 \usepackage{bigints}
